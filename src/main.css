@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* reseting base font-size to 10px */
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.4em;
+    line-height: 1.5;
+    background: white;
+}
+
+.page_wrapper {
+  padding: calc(20em / 14) 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: calc(280em / 14);
+  grid-gap: 0;
+  position: relative;
+}
+
+.page_wrapper h1 {
+  font-size: calc(16em / 14);
+  text-align: center;
+  margin-bottom: calc(8em / 16);
+}
+
+.settings_saved {
+  font-size: calc(12em / 14);
+  background: rgb(255, 242, 102, 0.2);
+  border-radius: calc(4em / 12);
+  padding: calc(8em / 12);
+  margin: calc(16em / 12) calc(16em / 12) 0;
+  text-align: center;
+  display: none;
+  transition: opacity ease-in-out 0.15s;
+}
+
+.switch {
+  background: rgba(0,0,0,0.1);
+  width: calc(32em / 14);
+  height: calc(16em / 14);
+  position: relative;
+  border-radius: calc(8em / 14);
+  margin-right: calc(12em / 14);
+  transition: all ease-in-out 0.1s;
+}
+.switch::after {
+  content: "";
+  width: calc(12em / 14);
+  height: calc(12em / 14);
+  background: rgba(0,0,0,0.25);
+  position: absolute;
+  top: calc(2em / 14);
+  left: calc(2em / 14);
+  border-radius: 50%;
+  transition: all ease-in-out 0.15s;
+}
+
+
+.setting_option {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  transition: all ease-in-out 0.1s;
+  
+}
+.setting_option:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0,0,0,0.7);
+}
+.setting_option-selected {
+  background: rgba(0, 120, 255, 0.05);
+  border: calc(1em / 14) solid rgba(0, 120, 255, 0.2);
+  color: rgba(0, 120, 255, 1);
+}
+
+.setting_option label {
+  width: 100%;
+  padding: calc(12em / 14) calc(16em / 14);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.setting_option label .emoji {
+  margin-left: auto;
+  padding-left: calc(8em / 14);
+}
+
+.setting_option label:hover .switch {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.setting_option input {
+  display: none;
+}
+
+.setting_option input:checked + label {
+  color: rgba(0, 0, 0, 1);
+}
+
+.setting_option input:checked + label .switch {
+  background: rgba(0, 173, 117, 1);
+}
+
+.setting_option input:checked + label .switch::after {
+  left: calc(18em / 14);
+  background: white;
+}
+
+
+
+
+
+footer {
+  font-size: calc(12em / 14);
+  margin-top: calc(24em / 12);
+  padding: calc(8em / 12) 0;
+  text-align: center;
+}
+footer a {
+  color: rgba(0, 115, 255, 0.8);
+  text-decoration: none;
+  position: relative;
+}
+footer a:hover {
+  color: rgba(0, 115, 255, 1);
+}
+footer a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: calc(4em / 12);
+  background: rgba(0, 115, 255, 0.15);
+  z-index: -1;
+  transition: width ease-in-out 0.15s;
+}
+footer a:hover::after {
+  width: 100%;
+}
